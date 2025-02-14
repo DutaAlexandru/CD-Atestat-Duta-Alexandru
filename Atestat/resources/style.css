@@ -45,6 +45,7 @@ nav a:hover {
 .logo img {
     width: 50px;
     border-radius: 25px;
+    align-items: center;
 }
 .container {
     flex: 1;
@@ -60,6 +61,11 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+}
+.mapouter{
+    display: flex;
+    align-items: end;
+    flex-direction: column;
 }
 @media (min-width: 768px) {
     .container {
