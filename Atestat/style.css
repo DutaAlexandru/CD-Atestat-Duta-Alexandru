@@ -1,35 +1,26 @@
-* {
+*{
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
+body{
+    font-family: 'Courier New', Courier, monospace;
 }
-header {
-    background: #1d428a;
+
+/* HEADER */
+header{
+    background-color: #1d428a;
     color: white;
     padding: 15px;
-    text-align: center;
-    justify-content: center;
     display: flex;
     position: fixed;
-    top: 0;
     width: 100%;
-    flex-direction: row;
-    /* padding-right: 50px*/
-
-} 
-
-nav {
+    z-index: 10;
+}
+nav{
     display: flex;
     justify-content: center;
-    align-self: center;
+    align-items: center;
     flex: 1;
 }
-
 nav a {
     padding: 10px;
     color: #ffffff;
@@ -37,62 +28,78 @@ nav a {
     transition: 0.7s;
     border-radius: 20px;
 }
-
-nav a:hover {
+nav a:hover, nav a.selected {
     background-color: #c8102e;
 }
-
 .logo {
     text-align: left;
 }
-
 .logo img {
     width: 50px;
     border-radius: 25px;
     align-items: center;
 }
-.container {
-    padding: 100px 0 0 0 !important;
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    text-align: center;
-}
-.produs{
-    display: flex;
-    background-color: aqua;
-    width: 60vh;
-    height: 70vh;
-    border-style: solid;
-    border-color: #8a1d60;
-    justify-content: space-around;
-    border-radius: 2rem;
 
-} 
-.pc{
+/* CONTENT */
+.container{
     display: flex;
-    gap: 10px;
-    border: 2% solid black;
-    border-color: #c8102e;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 100px 15px 15px;
 }
+.product{
+    background-color: #c8102e;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.product img {
+    width: 100%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.product img:hover {
+    transform: scale(1.08);
+    transform-origin: 50% 49%;
+}
+
+
+
+/* FOOTER */
 footer {
     background: #1b263b;
     color: white;
     text-align: center;
     padding: 10px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
 }
 
 
-@media (min-width: 768px) {
-    .container {
-        flex-direction: row;
-        justify-content: space-around;
-    }
+/* MAP */
+
+.mapouter{
+    position:relative;
+    text-align:right;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    padding-top: 84px;}
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    width:1000%;
+    height:437px;
+    display: flex;
+    align-self: center;
+    align-content: center;
+    justify-content: center;}
+.gmap_iframe {
+    height:900px!important;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
 }
