@@ -3,6 +3,7 @@
 }
 body{
     font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
 }
 
 /* HEADER */
@@ -57,8 +58,8 @@ nav a:hover, nav a.selected {
 }
 .container-individual{
     display: flex;
-    flex-wrap: wrap;
-    padding: 15px;
+    padding: 10px 10px 10px;
+    
 }
 .product{
     background-color: #0d5b4c;
@@ -73,8 +74,8 @@ nav a:hover, nav a.selected {
     flex-direction: column;
 }
 .imagine-pagina-individuala{
-    height: 65%;
-    width: 40%;
+    height: 155%;
+    width: 105%;
     margin-left: 0;
 }
 
@@ -95,7 +96,14 @@ nav a:hover, nav a.selected {
     cursor: pointer;
 }
 
-
+.cart{
+    justify-content: center;
+    display: flex;
+    background-color: blue;
+    height: 20px;
+    width: 50px;
+    border-radius: 10px;
+}
 
 
 /* FOOTER */
