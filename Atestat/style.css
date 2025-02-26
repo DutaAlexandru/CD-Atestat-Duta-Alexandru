@@ -6,7 +6,7 @@ body{
 }
 
 /* HEADER */
-header{
+.header{
     background-color: #1d428a;
     color: white;
     padding: 15px;
@@ -55,6 +55,11 @@ nav a:hover, nav a.selected {
     align-items: center;
     padding: 100px 15px 15px;
 }
+.container-individual{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}
 .product{
     background-color: #0d5b4c;
     border-radius: 10px;
@@ -68,8 +73,8 @@ nav a:hover, nav a.selected {
     flex-direction: column;
 }
 .imagine-pagina-individuala{
-    height: 70%;
-    width: 50%;
+    height: 65%;
+    width: 40%;
     margin-left: 0;
 }
 
