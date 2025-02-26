@@ -15,6 +15,13 @@ header{
     width: 100%;
     z-index: 10;
 }
+.header-individual-page{
+    background-color: #1d428a;
+    color: white;
+    padding: 15px;
+    display: flex;
+    width: 100%;
+}
 nav{
     display: flex;
     justify-content: center;
@@ -59,6 +66,11 @@ nav a:hover, nav a.selected {
     justify-content: center;
     gap: 5px;
     flex-direction: column;
+}
+.imagine-pagina-individuala{
+    height: 70%;
+    width: 50%;
+    margin-left: 0;
 }
 
 .product img {
