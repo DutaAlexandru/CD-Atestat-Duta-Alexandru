@@ -49,20 +49,32 @@ nav a:hover, nav a.selected {
     padding: 100px 15px 15px;
 }
 .product{
-    background-color: #c8102e;
+    background-color: #0d5b4c;
     border-radius: 10px;
     overflow: hidden;
     margin: 20px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
 }
 
 .product img {
-    width: 100%;
+    width: 50%;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* margin: 20px 80px 20px 80px; */
 }
 
 .product img:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
     transform-origin: 50% 49%;
+    cursor: pointer;
+}
+.product{
+    text-decoration: none;
+    color: white;
     cursor: pointer;
 }
 
