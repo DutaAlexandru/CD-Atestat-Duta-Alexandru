@@ -6,6 +6,42 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>// let varsta = prompt("Câți ani ai?");
+      // varsta = Number(varsta); // Convertim în număr
+
+      // if (varsta >= 18) {
+      //     alert("Poți obține permisul de conducere! 🚗");
+      // } else if (varsta >= 16) {
+      //     alert("Poți începe orele de condus! 🏁");
+      // } else {
+      //     alert("Ești prea mic pentru permis! ❌");
+      // }
+      // function inmulteste(a, b)       
+      //     {
+      //         return a * b;
+      //     }
+
+      // let rezultat = inmulteste(4, 3);
+      // alert(rezultat); // 12</script>
+        
+
+        <form name="submit-to-google-sheet">
+            <input name="nume" type="name" placeholder="nume" required>
+            <input name="email" type="email" placeholder="email" required>
+            <input name="mesaj" type="text" placeholder="mesaj" required>
+            <button type="submit">Send</button>
+          </form>
+          
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzbS-oRHf8-LPZZKDQY7gZeywlzqiK8XWBkgAFUQs7k9AfMGD7buxFLIe7wOM1BxTqt/exec'
+            const form = document.forms['submit-to-google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
 </body>
 </html>
