@@ -58,9 +58,21 @@ nav a:hover, nav a.selected {
 }
 .container-individual{
     display: flex;
-    padding: 10px 10px 10px;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
     
 }
+
+.container-individual .imagine-pagina-individuala {
+    width: 25%;
+}
+
+
+.container-individual .content {
+    width: 70%;
+}
+
 .product{
     background-color: #0d5b4c;
     border-radius: 10px;
@@ -74,8 +86,8 @@ nav a:hover, nav a.selected {
     flex-direction: column;
 }
 .imagine-pagina-individuala{
-    height: 155%;
-    width: 105%;
+    height: 158%;
+    width: 107%;
     margin-left: 0;
 }
 
@@ -97,13 +109,29 @@ nav a:hover, nav a.selected {
 }
 
 .cart{
-    justify-content: center;
-    display: flex;
-    background-color: blue;
-    height: 20px;
-    width: 50px;
-    border-radius: 10px;
+    display: inline-block;
+    background-image: url(img/cart2.jpg.png);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 12px 5px;
+    background-color: #c8102e;
+    margin-top: 20px;
+    padding: 10px 5px 10px 60px;
+    border-radius: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    width: 130px;
+    height: 15px;
+    box-shadow: #1b263b;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
+
+.cart:hover {
+    box-shadow: none;
+}
+
+
 
 
 /* FOOTER */
