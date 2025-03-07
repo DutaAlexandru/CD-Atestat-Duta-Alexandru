@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+}
+.header{
+    background-color: #1d428a;
+    color: white;
+    padding: 15px;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    
+}
+nav a {
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.7s;
+    border-radius: 20px;
+}
+.container{
+    margin-top: 100px;
+}
+.text{
+    margin-top: 100px;
+}
+
+footer {
+    background: #1b263b;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    left: 0;
+    bottom: 0;
+    width: 100%; 
+}
+.product{
+    background-color: #0d5b4c;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+}
