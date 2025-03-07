@@ -4,6 +4,10 @@
 body{
     font-family: 'Courier New', Courier, monospace;
     overflow-x: hidden;
+    /* background-image: url(./img/background4.jpg); */
+    /* background-size: cover;
+    background-position: center; */
+    background: radial-gradient(circle, #ff7e5f, #feb47b);
 }
 
 /* HEADER */
@@ -15,6 +19,7 @@ body{
     position: fixed;
     width: 100%;
     z-index: 10;
+    background: rgba(0, 0, 0, 0);
 }
 .header-individual-page{
     background-color: #1d428a;
@@ -37,7 +42,7 @@ nav a {
     border-radius: 20px;
 }
 nav a:hover, nav a.selected {
-    background-color: #c8102e;
+    background-color: #c5a529;
 }
 .logo {
     text-align: left;
@@ -64,6 +69,7 @@ nav a:hover, nav a.selected {
     
 }
 
+
 .container-individual .imagine-pagina-individuala {
     width: 25%;
 }
@@ -74,7 +80,7 @@ nav a:hover, nav a.selected {
 }
 
 .product{
-    background-color: #0d5b4c;
+    background-color: #0c413f;
     border-radius: 10px;
     overflow: hidden;
     margin: 20px;
