@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The dunk deck</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">	
+    <script
+			  src="https://code.jquery.com/jquery-3.7.1.min.js"
+			  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			  crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -29,7 +33,7 @@
 
 
        
-       <form name="submit-to-google-sheet">
+       <form name="submit-to-google-sheet" class="contact-form">
         <input name="nume" type="name" placeholder="nume" required>
         <input name="email" type="email" placeholder="email" required>
         <input name="mesaj" type="text" placeholder="mesaj" required>
@@ -40,5 +44,16 @@
         <p>&copy; 2025 The dunk deck</p>
     </footer>
     <script src="scripts.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzbS-oRHf8-LPZZKDQY7gZeywlzqiK8XWBkgAFUQs7k9AfMGD7buxFLIe7wOM1BxTqt/exec';
+        const form = document.forms['submit-to-google-sheet']
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        });
+
+    </script>
 </body>
 </html>

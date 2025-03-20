@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The dunk deck</title>
     <link rel="stylesheet" href="style.css">
-    <script src="scripts.js"></script>
+    
+	<script
+			  src="https://code.jquery.com/jquery-3.7.1.min.js"
+			  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			  crossorigin="anonymous"></script>
+
+	<script src="scripts.js"></script>
 </head>
 
 <body>
-    <header class="header">
+    <header class="">
         <div class="logo"><img src="./img/logo.jpg" alt="logo"></div>
         <nav>
             <a href="#" class="selected">Acasa</a>
@@ -21,36 +27,57 @@
         </nav>
     </header>
     <div class="container">
-		<h1>Welcome to our beautiful site</h1>
+		<div class="home-left">
+			<h1>Welcome to our beautiful site</h1>
 
-		<h2>About us</h2>
-		<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas voluptatum aspernatur voluptates vero eaque adipisci a. Quod accusantium, quae odio fuga eius error, ullam magnam veniam deleniti harum at impedit!</p>
-
-		<h2>Our products</h2>
-		<div class="prod-slider">
-			<div class="product">
-				<a href="">
-					<img src="./img/poza1-Giannis Antetokounmpo.jpg" alt="Giannis Antetokounmpo">
-				</a>
-			</div>
-			<div class="product">
-				<a href="">
-					<img src="./img/poza1-Giannis Antetokounmpo.jpg" alt="Giannis Antetokounmpo">
-				</a>
-				<h1>Giannis Antetokounmpo</h1>
-			</div>
-			<div class="product">
-				<a href="">
-					<img src="./img/poza1-Giannis Antetokounmpo.jpg" alt="Giannis Antetokounmpo">
-				</a>
-			</div>
-			<div class="product">
-				<a href="">
-					<img src="./img/poza1-Giannis Antetokounmpo.jpg" alt="Giannis Antetokounmpo">
-				</a>
-			</div>
+			<h2>About us</h2>
+			<p>Bine ai venit pe NBA Cards Market,
+			 destinația ta principală pentru 
+			 colecționabilele NBA! 🌟 Suntem 
+			 o echipă de pasionați ai baschetului 
+			 și ai lumii fascinante a cardurilor 
+			 de colecție NBA. De la începuturile
+			  NBA-ului până la momentele iconice 
+			  din zilele noastre, fiecare card spune
+			   o poveste unică despre eroii și 
+			   evenimentele care au marcat acest sport legendar.	
+			</p>
 		</div>
-		<a href="./products.html">See more...</a>
+
+		<div class="home-right">
+			<h2>Our products</h2>
+
+			<div class="slider">
+
+				<a href="#0" class="next control">&gt;</a>
+				<a href="#0" class="prev control">&lt;</a>
+		  
+				<ul>
+					<li class="c">
+						<a href="">
+							<img src="./img/poza1-Giannis Antetokounmpo.jpg" alt="Giannis Antetokounmpo">
+						</a>
+					</li>
+					<li class="r">
+						<a href="">
+							<img src="./img/poza1-Giannis Antetokounmpo.jpg" alt="Giannis Antetokounmpo">
+						</a>
+					</li>
+					<li class="g">
+						<a href="">
+							<img src="./img/poza1-Giannis Antetokounmpo.jpg" alt="Giannis Antetokounmpo">
+						</a>
+					</li>
+					<li class="b">
+						<a href="">
+							<img src="./img/poza1-Giannis Antetokounmpo.jpg" alt="Giannis Antetokounmpo">
+						</a>
+					</li>
+				</ul>
+		  	</div>
+			<a href="./products.html">See more...</a>
+		</div>
+		
     </div>
     <footer>
         <p>&copy; 2025 The dunk deck</p>
