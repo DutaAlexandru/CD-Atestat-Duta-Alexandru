@@ -60,6 +60,7 @@ nav a:hover, nav a.selected {
 }
 .home-left{
     width: 50%;
+    height: 100%;
 }
 .home-right{
     width: 50%;
