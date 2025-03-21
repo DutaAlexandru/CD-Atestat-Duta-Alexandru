@@ -80,6 +80,7 @@ nav a:hover, nav a.selected {
 
 .container-individual .content {
     width: 70%;
+    margin-top: 100px;
 }
 
 .product{
@@ -98,6 +99,7 @@ nav a:hover, nav a.selected {
     height: 158%;
     width: 107%;
     margin-left: 0;
+    margin-top: 100px;
 }
 
 .product img {
@@ -140,7 +142,7 @@ nav a:hover, nav a.selected {
   
   .slider ul li{
     position:relative;
-    float:left;
+    /* float:left; */
     display:inline-block;
     margin:0;
     padding:0;
