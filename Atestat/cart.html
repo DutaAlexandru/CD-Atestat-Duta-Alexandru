@@ -12,16 +12,24 @@
     <header class="">
         <div class="logo"><img src="./img/logo.jpg" alt="logo"></div>
         <nav>
-            <a href="#" class="selected">Acasa</a>
+            <a href="./index.html">Acasa</a>
             <a href="./products.html">Produse</a>
             <a href="./about-us.html">Despre noi</a>
             <a href="./contact.html">Contact</a>
             <a href="./map-page.html">Harta</a>
-			<a href="./cart.html">Cos</a>
+			<a href="./cart.html" class="selected">Cos</a>
         </nav>
     </header>
-    <footer>
+    <div class="container" style="display:flex ; flex-direction: column;">
+    <h1>cos</h1>
+
+  <ul id="cart-items"></ul>
+  <p id="cart-total">Total: 0 RON</p>
+  <button onclick="renderCart()">Actualizează Coșul</button>
+</div>
+    <footer style="position: fixed; width: 100%;">
         <p>&copy; 2025 The dunk deck</p>
     </footer>
+    <script src="./scripts.js"></script>
 </body>
 </html>
