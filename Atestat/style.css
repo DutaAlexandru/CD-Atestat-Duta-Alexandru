@@ -88,7 +88,7 @@ nav a:hover, nav a.selected {
 
 .product{
     background-color: #037D7A;
-    border-radius: 10px;
+    border-radius: 30px;
     overflow: hidden;
     margin: 20px;
     display: flex;
@@ -120,6 +120,10 @@ nav a:hover, nav a.selected {
     text-decoration: none;
     color: white;
     cursor: pointer;
+}
+
+.social-icons img{
+    width: 40px;
 }
 
 /* SLIDER */
@@ -238,6 +242,11 @@ footer {
     text-align: center;
     padding: 10px;
     bottom: 0;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 

@@ -21,15 +21,23 @@
         </nav>
     </header>
     <div class="container" style="display:flex ; flex-direction: column;">
-    <h1>cos</h1>
+        <h1>cos</h1>
 
-  <ul id="cart-items"></ul>
-  <p id="cart-total">Total: 0 RON</p>
-  <button onclick="renderCart()" style="color: black;">Actualizează Coșul</button>
-</div>
-    <footer style="position: fixed; width: 100%;">
+        <ul id="cart-items"></ul>
+        <p id="cart-total">Total: 0 RON</p>
+        <button onclick="renderCart()" style="color: black;">Actualizează Coșul</button>
+        <div id="paypal-button-container"></div>
+    </div>
+
+    <footer>
+        <a href="https://www.instagram.com/nba/" class="social-icons"><img src="./img/icons8-instagram-100.png" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@nba?lang=en" class="social-icons"><img src="./img/icons8-tiktok-100.png" alt="TikTok"></a>
         <p>&copy; 2025 The dunk deck</p>
+        <a href="https://www.facebook.com/nba/" class="social-icons"><img src="./img/icons8-facebook-100.png" alt="Facebook"></a>
+        <a href="https://www.x.com/nba/" class="social-icons"><img src="./img/icons8-x-100.png" alt="X"></a> 
     </footer>
+    
+    <script src="https://www.paypal.com/sdk/js?client-id=Ac2w9Xm8n9zbV0VUEMEFmknDWc7o1FU-qVQcXFBUUCXS2xanrjBAmVdseEOAEvP_2LmRABMqFt5FADKP&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
     <script src="./scripts.js"></script>
 </body>
 </html>

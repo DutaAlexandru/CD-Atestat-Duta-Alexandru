@@ -113,6 +113,46 @@ function renderCart() {
   });
 
   totalContainer.textContent = `Total: ${total} RON`;
+  renderPaypal(total);
+}
+function renderPaypal(price) {
+  if (price === 0) {
+    document.getElementById("paypal-button-container").innerHTML = "";
+    return;
+  }
+  paypal
+    .Buttons({
+      style: {
+        shape: "rect",
+        color: "gold",
+        layout: "vertical",
+        label: "paypal",
+      },
+      createOrder: function (data, actions) {
+        return actions.order.create({
+          purchase_units: [{ amount: { currency_code: "EUR", value: price } }],
+        });
+      },
+      onApprove: function (data, actions) {
+        return actions.order.capture().then(function (orderData) {
+
+          localStorage.setItem("cart", JSON.stringify([]));
+          renderCart(); // Reafișăm coșul gol
+
+
+          const element = document.getElementById("paypal-button-container");
+          element.innerHTML = "";
+          element.innerHTML = "<h3>Thank you for your payment!</h3>";
+
+
+        });
+      },
+      onError: function (err) {
+        console.log(err);
+      },
+    })
+    .render("#paypal-button-container");
+
 }
 
 renderCart();
