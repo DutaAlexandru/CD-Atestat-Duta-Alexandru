@@ -3,12 +3,9 @@
     color: white;
 }
 body{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     overflow-x: hidden;
     background-image: url(./img/Background2.jpg);
-    /* background-size: cover;
-    background-position: center; */
-    /* background: radial-gradient(circle, #ff7e5f, #feb47b); */
 }
 
 /* HEADER */
@@ -20,11 +17,11 @@ header{
     position: fixed;
     width: 100%;
     z-index: 10;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    font-size: larger;
 }
 header.small {
     padding: 0;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 nav{
     display: flex;
@@ -58,14 +55,21 @@ nav a:hover, nav a.selected {
     justify-content: space-around;
     align-items: center;
     padding: 100px 15px 15px;
+    min-height: 300px;
 }
 .home-left{
     width: 50%;
     height: 100%;
 }
+
+.home-left p {
+    margin: 20px 0;
+}
+
 .home-right{
     width: 50%;
     height: 100%;
+    gap: 5px;
 }
 .container-individual{
     display: flex;
@@ -86,6 +90,64 @@ nav a:hover, nav a.selected {
     margin-top: 100px;
 }
 
+.contact{
+    width: 50%;
+    min-width: 300px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact h1{
+    color: black;
+}
+
+.contact form{
+    width: 60%;
+    min-width: 200px;
+}
+
+.contact label{
+    display: block;
+    margin-top: 10px;
+}
+
+.contact input {
+    width: 80%;
+    background: none;
+    padding: 10px;
+    border: 2px solid #444;
+    border-radius: 5px;
+    color: black;
+    font-size: larger;
+}
+
+.contact input:active, .contact input:focus-visible {
+    border: 2px solid #c5a529;
+    outline: none;
+}
+.contact button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    border: none;
+    font-size: larger;
+    padding: 10px;
+    background: none;
+}
+.contact button:hover{
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
 .product{
     background-color: #037D7A;
     border-radius: 30px;
@@ -97,7 +159,15 @@ nav a:hover, nav a.selected {
     justify-content: center;
     gap: 5px;
     flex-direction: column;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
+.product a:hover{
+    transition: all 1s ease-in-out;
+}
+
+
 .imagine-pagina-individuala{
     height: 158%;
     width: 107%;
@@ -107,24 +177,21 @@ nav a:hover, nav a.selected {
 
 .product img {
     width: 50%;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-    /* margin: 20px 80px 20px 80px; */
 }
 
-.product img:hover {
+.product:hover {
     transform: scale(1.05);
     transform-origin: 50% 49%;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-.product{
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-}
+
 
 .social-icons img{
     width: 40px;
 }
+
 
 /* SLIDER */
 
@@ -149,7 +216,6 @@ nav a:hover, nav a.selected {
   
   .slider ul li{
     position:relative;
-    /* float:left; */
     display:inline-block;
     margin:0;
     padding:0;
@@ -210,6 +276,7 @@ nav a:hover, nav a.selected {
 /* CART */
 
 .cart{
+    cursor: pointer;
     display: inline-block;
     background-image: url(img/cart2.jpg.png);
     background-repeat: no-repeat;
@@ -232,7 +299,31 @@ nav a:hover, nav a.selected {
     box-shadow: none;
 }
 
+.cart-table td {
+    padding: 3px 10px;
+}
 
+.cart-table tr td {
+    text-align: right;
+}
+
+.cart-table tr td:nth-child(1) {
+    text-align: left;
+}
+
+.cart-table tr td:nth-child(3) {
+    text-align: center;
+}
+
+.cart-table thead tr {
+    background-color: #458;
+}
+.add-qty{
+    background: none;
+}
+.decrease-qty{
+    background: none;
+}
 
 
 /* FOOTER */

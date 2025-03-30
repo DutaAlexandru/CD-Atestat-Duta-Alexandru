@@ -1,21 +1,9 @@
-            
-
-// $(".contact-form").submit(function(){
-//   const scriptURL = 'https://script.google.com/macros/s/AKfycbzbS-oRHf8-LPZZKDQY7gZeywlzqiK8XWBkgAFUQs7k9AfMGD7buxFLIe7wOM1BxTqt/exec'
-
-//   $.post(scriptURL, $(this).serialize(), function(response){
-//     console.log(response);
-//     return false;
-//   })
-// });
-
 // header
 $(window).scroll(function() {    
   var scroll = $(window).scrollTop();
-  console.log(scroll);
   if (scroll == 0) {
       $("header").removeClass("small");
-  } else if (scroll > 10) {
+  } else if (scroll > 30) {
     $("header").addClass("small");
   }
 }); 
@@ -63,7 +51,7 @@ $(function() {
   
 });
 
-function addToCart(product) {
+function addToCart(product, confirmation=true) {
   let cart = JSON.parse(localStorage.getItem("cart")) || []; // Citim coșul
 
   let existingProduct = cart.find(item => item.id === product.id);
@@ -75,7 +63,8 @@ function addToCart(product) {
   }
 
   localStorage.setItem("cart", JSON.stringify(cart)); // Salvăm în localStorage
-  alert("Produsul a fost adăugat în coș!"); // Afișăm un mesaj
+  if ( confirmation )
+     alert("Produsul a fost adăugat în coș!"); // Afișăm un mesaj
   renderCart(); // Reafișăm coșul
 }
 
@@ -99,25 +88,39 @@ function removeFromCart(productId) {
 function renderCart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   let cartContainer = document.getElementById("cart-items");
+
+  if ( cartContainer === null ) return;
+
   let totalContainer = document.getElementById("cart-total");
 
   cartContainer.innerHTML = ""; // Curățăm lista
   let total = 0;
 
   cart.forEach(product => {
-    let item = document.createElement("li");
-    item.innerHTML = `${product.name} x${product.quantity} - ${product.price * product.quantity} RON 
-      <button onclick="removeFromCart('${product.id}')">➖</button>`;
+    let item = document.createElement("tr");
+
+    item.innerHTML = `<tr>
+                    <td>${product.name}</td>
+                    <td>${product.price} RON</td>
+                    <td>
+                      <button class="add-qty" onclick="removeFromCart('${product.id}')">-</button>
+                      ${product.quantity}
+                      <button class="decrease-qty" onclick="addToCart({ id: '${product.id}', name: '${product.name}', price: ${product.price} }, false)">+</button>
+                    </td>
+                    <td> ${product.price * product.quantity} RON</td>
+                </tr>`;
+
     cartContainer.appendChild(item);
     total += product.price * product.quantity;
   });
 
-  totalContainer.textContent = `Total: ${total} RON`;
-  renderPaypal(total);
+  totalContainer.textContent = `Total: ${total} RON / ${total/5}€ `;
+  renderPaypal(total/5);
 }
+
 function renderPaypal(price) {
+  document.getElementById("paypal-button-container").innerHTML = "";
   if (price === 0) {
-    document.getElementById("paypal-button-container").innerHTML = "";
     return;
   }
   paypal
@@ -142,7 +145,7 @@ function renderPaypal(price) {
 
           const element = document.getElementById("paypal-button-container");
           element.innerHTML = "";
-          element.innerHTML = "<h3>Thank you for your payment!</h3>";
+          element.innerHTML = "<h3>Va multumim pentru comanda!</h3>";
 
 
         });

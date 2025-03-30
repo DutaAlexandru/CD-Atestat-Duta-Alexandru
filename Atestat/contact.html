@@ -10,59 +10,6 @@
 			  src="https://code.jquery.com/jquery-3.7.1.min.js"
 			  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 			  crossorigin="anonymous"></script>
-              <!-- <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    background-color: #f4f4f9;
-                    margin: 0;
-                    padding: 0;
-                }
-                .container {
-                    max-width: 600px;
-                    margin: 50px auto;
-                    padding: 20px;
-                    background-color: white;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                }
-                h2 {
-                    text-align: center;
-                    color: #333;
-                }
-                .form-group {
-                    margin-bottom: 15px;
-                }
-                .form-group label {
-                    display: block;
-                    font-weight: bold;
-                    color: #555;
-                }
-                .form-group input,
-                .form-group textarea {
-                    width: 100%;
-                    padding: 10px;
-                    border: 1px solid #ddd;
-                    border-radius: 4px;
-                    font-size: 16px;
-                }
-                .form-group textarea {
-                    resize: vertical;
-                    height: 150px;
-                }
-                .form-group button {
-                    width: 100%;
-                    padding: 12px;
-                    background-color: #4CAF50;
-                    border: none;
-                    border-radius: 4px;
-                    color: white;
-                    font-size: 18px;
-                    cursor: pointer;
-                }
-                .form-group button:hover {
-                    background-color: #45a049;
-                }
-            </style> -->
-              
 </head>
 
 <body>
@@ -77,34 +24,22 @@
             <a href="./cart.html">Cos</a>
         </nav>
     </header>
-    <div class="container" style="display:flex ; flex-direction: column;">
-       <h1>Contacteaza-ne!</h1>
-        <form name="submit-to-google-sheet" class="contact-form">
-            <label for="name">Nume complet</label>
-            <input name="nume" type="name" placeholder="nume" required>
-            <label for="email">Email</label>
-            <input name="email" type="email" placeholder="email" required>
-            <label for="message">Mesaj</label>
-            <input name="mesaj" type="text" placeholder="mesaj" required>
-            <button type="submit">Send</button>
-      <!-- </form>
-      <form action="#" method="post">
-        <div class="form-group">
-            <label for="name">Nume complet</label>
-            <input type="name" id="name" name="name" required>
+    <div class="container">
+        <div class="contact">
+            <h1>Contacteaza-ne!</h1>
+            <form name="submit-to-google-sheet" class="contact-form">
+                <label for="name">Nume complet</label>
+                <input name="nume" type="name" minlength="5" placeholder="nume" required >
+                
+                <label for="email">Email</label>
+                <input name="email" type="email" placeholder="email" required >
+               
+                <label for="message">Mesaj</label>
+                <input name="mesaj" type="text" placeholder="mesaj" required >
+                <br>
+                <button type="submit">Trimite</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Mesaj</label>
-            <textarea id="message" name="mesaj" required></textarea>
-        </div>
-        <div class="form-group">
-            <button type="submit">Trimite mesajul</button>
-        </div>
-    </form> -->
     </div>
     <footer>
         <a href="https://www.instagram.com/nba/" class="social-icons"><img src="./img/icons8-instagram-100.png" alt="Instagram"></a>
@@ -120,8 +55,15 @@
         form.addEventListener('submit', e => {
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => console.log('Success!', response))
-                .catch(error => console.error('Error!', error.message))
+                .then(response => {
+                    alert("Datele au fost trimise cu succes!");
+                    form.reset();
+                    console.log('Success!', response)
+                })
+                .catch(error => { 
+                    alert("Eroare! Datele nu a putut fi trimise");
+                    console.error('Error!', error.message) 
+                })
         });
 
     </script>
