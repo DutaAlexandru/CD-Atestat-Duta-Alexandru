@@ -36,6 +36,9 @@ nav a {
     transition: 0.7s;
     border-radius: 20px;
 }
+nav a:nth-child(6) {
+    position: relative;
+}
 nav a:hover, nav a.selected {
     background-color: #c5a529;
 }
@@ -46,6 +49,20 @@ nav a:hover, nav a.selected {
     width: 50px;
     border-radius: 25px;
     align-items: center;
+}
+
+.cart-counter {
+    background-color: #c8102e;
+    border-radius: 14px;
+    font-size: 13px;
+    position: absolute;
+    top: -5px;
+    padding: 7px;
+}
+
+#paypal-button-container {
+    margin-top: 50px;
+    width: 400px;
 }
 
 /* CONTENT */
@@ -135,7 +152,7 @@ nav a:hover, nav a.selected {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
     border: none;
     font-size: larger;
     padding: 10px;
@@ -298,8 +315,14 @@ nav a:hover, nav a.selected {
 .cart:hover {
     box-shadow: none;
 }
+.cart-table{
+    min-width: 400px;
+    width: 600px;
+    margin: 30px 0px;
+}
 
 .cart-table td {
+    position: relative;
     padding: 3px 10px;
 }
 
@@ -318,13 +341,23 @@ nav a:hover, nav a.selected {
 .cart-table thead tr {
     background-color: #458;
 }
+
 .add-qty{
     background: none;
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
 }
 .decrease-qty{
     background: none;
+    position: absolute;
+    left: 5px;
+    cursor: pointer;
 }
-
+.clear-cart{
+    background: none;
+    margin-bottom: 30px;
+}
 
 /* FOOTER */
 footer {

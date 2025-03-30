@@ -9,8 +9,9 @@ $(window).scroll(function() {
 }); 
 
 
-// card slider
-$(function() {
+
+// product slider
+$(document).ready( function() {
   
   var slideCount =  $(".slider ul li").length;
   var slideWidth =  $(".slider ul li").width();
@@ -47,8 +48,6 @@ $(function() {
   $(".prev").on("click",function(){
     moveLeft();
   });
-  
-  
 });
 
 function addToCart(product, confirmation=true) {
@@ -66,6 +65,7 @@ function addToCart(product, confirmation=true) {
   if ( confirmation )
      alert("Produsul a fost adăugat în coș!"); // Afișăm un mesaj
   renderCart(); // Reafișăm coșul
+  renderCartCount();
 }
 
 function removeFromCart(productId) {
@@ -83,6 +83,24 @@ function removeFromCart(productId) {
 
   localStorage.setItem("cart", JSON.stringify(cart)); // Salvăm modificările
   renderCart(); // Reafișăm coșul
+  renderCartCount();
+}
+
+function renderCartCount() {
+  console.log("RenderCartCount");
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cartContainer = document.getElementsByClassName("cart-counter");
+
+  if ( cartContainer === null ) 
+    return;
+
+  let cartCount = 0;
+
+  cart.forEach(product => {
+    cartCount += product.quantity;
+  });
+
+  cartContainer[0].innerHTML = cartCount;
 }
 
 function renderCart() {
@@ -151,6 +169,7 @@ function renderPaypal(price) {
         });
       },
       onError: function (err) {
+        alert("Eroare! Ceva nu a functionat...");
         console.log(err);
       },
     })
@@ -158,4 +177,19 @@ function renderPaypal(price) {
 
 }
 
-renderCart();
+function clearCart(){
+  localStorage.removeItem("cart");
+  renderCart();
+  renderCartCount();
+}
+
+addEventListener("DOMContentLoaded", (event) => {
+  renderCart();
+  renderCartCount();
+});
+
+$(document).ready(function(){
+	let containerHeight = $(window).height() - $("header").height() - $("footer").height() - 81;
+
+	$(".container").css("min-height", containerHeight);
+});
